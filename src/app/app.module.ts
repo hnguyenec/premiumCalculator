@@ -5,6 +5,7 @@ import { MyDatePickerModule } from 'mydatepicker';
 import { ReactiveFormsModule } from '../../node_modules/@angular/forms';
 
 import { AppComponent } from './app.component';
+import { AgeHelpersService } from './shared/age-helpers.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { AppComponent } from './app.component';
     MyDatePickerModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    AgeHelpersService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
