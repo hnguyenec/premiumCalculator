@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '../../node_modules/@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AgeHelpersService } from './shared/age-helpers.service';
+import { PremiumHelpersService } from './shared/premium-helpers.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AgeHelpersService } from './shared/age-helpers.service';
     ReactiveFormsModule
   ],
   providers: [
-    AgeHelpersService
+    AgeHelpersService,
+    PremiumHelpersService
   ],
   bootstrap: [AppComponent]
 })
