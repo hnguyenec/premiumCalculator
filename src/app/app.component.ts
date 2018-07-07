@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IMyDate, IMyDpOptions } from 'mydatepicker';
+import { Gender } from './shared/constants';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +26,8 @@ export class AppComponent implements OnInit {
     disableSince: this.currentDate,
     showTodayBtn: true
   };
+
+  genders: typeof Gender = Gender;
 
   constructor(
     private formBuilder: FormBuilder
