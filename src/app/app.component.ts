@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IMyDate, IMyDpOptions } from 'mydatepicker';
 import { Gender, DateFormat } from './shared/constants';
+import { AgeHelpersService } from './shared/age-helpers.service';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +31,8 @@ export class AppComponent implements OnInit {
   genders: typeof Gender = Gender;
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private ageHelpers: AgeHelpersService
   ) { }
 
   ngOnInit(): void {
@@ -43,4 +45,13 @@ export class AppComponent implements OnInit {
 
   // convenience getter for easy access to form fields
   get form() { return this.userInforForm.controls; }
+
+  getAge() {
+    const dobString = this.userInforForm.get('dob').value.formatted;
+    return this.ageHelpers.getAge(dobString);
+  }
+
+  calculatePremium() {
+    return 0;
+  }
 }
