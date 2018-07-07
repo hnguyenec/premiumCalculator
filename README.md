@@ -6,4 +6,4 @@
 + Premium = 0 if Age <18 OR Age >65
 
 START: 8:40 PM
-FINISH: 
+FINISH: 10:10 PM
