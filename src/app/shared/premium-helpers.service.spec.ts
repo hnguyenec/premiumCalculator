@@ -29,12 +29,12 @@ describe('PremiumHelpersService', () => {
   }));
 
   it('MALE: should return correct result', inject([PremiumHelpersService], (service: PremiumHelpersService) => {
-    const expectValue = 58*maleFactor*100;
+    const expectValue = 58 * maleFactor * 100;
     expect(service.calculatePremium(58, maleFactor)).toEqual(expectValue.toFixed(1));
   }));
 
   it('FEMALE: should return correct result', inject([PremiumHelpersService], (service: PremiumHelpersService) => {
-    const expectValue = 58*femaleFactor*100;
+    const expectValue = 58 * femaleFactor * 100;
     expect(service.calculatePremium(58, femaleFactor)).toEqual(expectValue.toFixed(1));
   }));
 });

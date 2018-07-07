@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IMyDate, IMyDpOptions } from 'mydatepicker';
 import { Gender, DateFormat } from './shared/constants';
 import { AgeHelpersService } from './shared/age-helpers.service';
+import { PremiumHelpersService } from './shared/premium-helpers.service';
 
 @Component({
   selector: 'app-root',
@@ -32,7 +33,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private ageHelpers: AgeHelpersService
+    private ageHelpers: AgeHelpersService,
+    private premiumHelpers: PremiumHelpersService
   ) { }
 
   ngOnInit(): void {
@@ -52,6 +54,8 @@ export class AppComponent implements OnInit {
   }
 
   calculatePremium() {
-    return 0;
+    const age = this.getAge();
+    const genderFactor = this.userInforForm.get('gender').value;
+    return this.premiumHelpers.calculatePremium(age, genderFactor);
   }
 }
