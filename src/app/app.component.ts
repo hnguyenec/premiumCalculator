@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IMyDate, IMyDpOptions } from 'mydatepicker';
-import { Gender } from './shared/constants';
+import { Gender, DateFormat } from './shared/constants';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   };
 
   dobDatePickerOptions: IMyDpOptions = {
-    dateFormat: 'dd mmm yyyy',
+    dateFormat: DateFormat,
     editableDateField: false,
     openSelectorOnInputClick: true,
     disableSince: this.currentDate,
